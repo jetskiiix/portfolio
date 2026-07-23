@@ -1534,3 +1534,191 @@ font-size:45px;
 
 }
 
+/* ==========================================================
+   FINAL MOBILE OPTIMIZATION FIX
+========================================================== */
+
+
+@media(max-width:768px){
+
+    /* HEADER */
+    header{
+
+        position:fixed;
+
+        top:0;
+
+        padding:10px 15px;
+
+        flex-direction:column;
+
+        gap:8px;
+
+        height:auto;
+
+    }
+
+
+    /* LOGO */
+    .logo{
+
+        font-size:22px;
+
+        letter-spacing:3px;
+
+    }
+
+
+    /* NAV */
+    nav{
+
+        gap:12px;
+
+        justify-content:center;
+
+    }
+
+
+    nav a{
+
+        font-size:14px;
+
+    }
+
+
+    /* MUSIC BUTTON REAL FIX */
+    #musicButton{
+
+        width:35px;
+
+        height:35px;
+
+        padding:0;
+
+        margin:0;
+
+        border-radius:50%;
+
+        position:fixed;
+
+        top:10px;
+
+        left:10px;
+
+        z-index:99999;
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        font-size:12px;
+
+    }
+
+
+    #musicButton img{
+
+        width:15px;
+
+        height:15px;
+
+    }
+
+
+    /* HERO */
+    #home{
+
+        padding-top:170px;
+
+    }
+
+
+    .heroLogo{
+
+        width:90px;
+
+        margin-bottom:20px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:50px;
+
+        letter-spacing:3px;
+
+    }
+
+
+    /* LOADER */
+    .loaderContent h1{
+
+        font-size:38px;
+
+        letter-spacing:4px;
+
+    }
+
+
+    .loaderBar{
+
+        width:220px;
+
+        height:6px;
+
+    }
+
+}
+
+
+
+/* EXTRA SMALL PHONES */
+
+@media(max-width:480px){
+
+
+    header{
+
+        padding:8px;
+
+    }
+
+
+    nav{
+
+        gap:8px;
+
+    }
+
+
+    nav a{
+
+        font-size:13px;
+
+    }
+
+
+    #musicButton{
+
+        width:28px;
+
+        height:28px;
+
+        font-size:10px;
+
+    }
+
+
+    #musicButton img{
+
+        width:12px;
+
+        height:12px;
+
+    }
+
+
+}
