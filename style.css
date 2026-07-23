@@ -1,0 +1,1536 @@
+/* ==========================================================
+   MALARA PORTFOLIO
+   STYLE.CSS
+   PART 1 - GLOBAL / BACKGROUND / NAVIGATION / HERO
+========================================================== */
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    color:white;
+
+    background:
+    radial-gradient(circle at top,
+    #181428 0%,
+    #090812 45%,
+    #040404 100%);
+
+    overflow-x:hidden;
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#090909;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#7f1033;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#c41452;
+
+}
+
+/* ===========================
+   STARS
+=========================== */
+
+#stars{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-20;
+
+}
+
+.star{
+
+    position:absolute;
+
+    width:2px;
+
+    height:2px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:
+    twinkle 4s infinite ease-in-out;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+opacity:.2;
+
+transform:scale(.6);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.4);
+
+}
+
+100%{
+
+opacity:.2;
+
+transform:scale(.6);
+
+}
+
+}
+
+/* ===========================
+   PARTICLES
+=========================== */
+
+#particleContainer{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-15;
+
+}
+
+.particle{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    border-radius:50%;
+
+    background:#ff3f7d;
+
+    box-shadow:
+    0 0 12px #ff2b6e;
+
+}
+
+/* ===========================
+   FIREFLIES
+=========================== */
+
+#fireflyContainer{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-10;
+
+}
+
+.firefly{
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:#ffe97c;
+
+    box-shadow:
+
+    0 0 15px #fff7ad,
+
+    0 0 30px #ffd95c;
+
+}
+
+/* ===========================
+   MOON
+=========================== */
+
+#moon{
+
+    position:fixed;
+
+    right:70px;
+
+    top:60px;
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    background:#fff8d8;
+
+    box-shadow:
+
+    0 0 30px #fff5a5,
+
+    0 0 80px rgba(255,245,170,.5);
+
+    z-index:-5;
+
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    padding:22px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(8,8,12,.35);
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,.08);
+
+    z-index:999;
+
+}
+
+.logo{
+
+    font-family:"Cinzel",serif;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    color:white;
+
+    letter-spacing:4px;
+
+    text-shadow:
+
+    0 0 15px crimson;
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:28px;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:#ff3f82;
+
+    transition:.35s;
+
+}
+
+nav a:hover{
+
+    color:#ff4f8f;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+#home{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:120px 30px;
+
+}
+
+.hero{
+
+    text-align:center;
+
+    width:min(900px,90vw);
+
+}
+
+.heroLogo{
+
+    width:170px;
+
+    margin-bottom:35px;
+
+    transition:.5s;
+
+    filter:
+
+    drop-shadow(0 0 25px crimson);
+
+}
+
+.heroLogo:hover{
+
+    transform:
+
+    rotate(-3deg)
+
+    scale(1.05);
+
+}
+
+.hero h1{
+
+    font-family:"Cinzel",serif;
+
+    font-size:clamp(60px,8vw,110px);
+
+    letter-spacing:6px;
+
+    text-shadow:
+
+    0 0 25px crimson;
+
+}
+
+.hero h2{
+
+    margin-top:15px;
+
+    font-size:30px;
+
+    color:#ff6fa6;
+
+}
+
+.hero p{
+
+    margin-top:25px;
+
+    font-size:20px;
+
+    opacity:.85;
+
+    line-height:1.8;
+
+}
+
+/* ===========================
+   SOCIALS
+=========================== */
+
+.socials{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-top:45px;
+
+}
+
+.socials a{
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    transition:.35s;
+
+}
+
+.socials a:hover{
+
+    transform:
+
+    translateY(-5px);
+
+    background:
+
+    rgba(255,60,120,.25);
+
+    box-shadow:
+
+    0 0 20px crimson;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+button{
+
+    margin-top:45px;
+
+    padding:18px 48px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #ff0059,
+    #b0005b);
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+button:hover{
+
+    transform:
+
+    translateY(-4px);
+
+    box-shadow:
+
+    0 0 30px crimson;
+
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+section{
+
+    padding:120px 8%;
+
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+
+.glass{
+
+    background:
+
+    rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    border:
+
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    padding:45px;
+
+    box-shadow:
+
+    0 0 30px rgba(0,0,0,.35);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+header{
+
+    flex-direction:column;
+
+    gap:18px;
+
+    padding:18px;
+
+}
+
+nav{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.heroLogo{
+
+    width:120px;
+
+}
+
+.hero h2{
+
+    font-size:24px;
+
+}
+
+.hero p{
+
+    font-size:17px;
+
+}
+
+.socials{
+
+    gap:12px;
+
+}
+
+.socials a{
+
+    width:100%;
+
+    max-width:280px;
+
+    text-align:center;
+
+}
+
+button{
+
+    width:100%;
+
+    max-width:300px;
+
+}
+
+#moon{
+
+    width:90px;
+
+    height:90px;
+
+    right:20px;
+
+    top:25px;
+
+}
+
+}
+
+/* ==========================================================
+   PART 2 - ABOUT / SKILLS / PROJECTS / GALLERY / CONTACT
+==========================================================*/
+
+/* ===========================
+   SECTION TITLES
+=========================== */
+
+section h2{
+
+    font-family:"Cinzel",serif;
+
+    font-size:clamp(36px,5vw,58px);
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+    text-shadow:
+
+    0 0 20px crimson;
+
+}
+
+/* ===========================
+   ABOUT
+=========================== */
+
+#about{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#about .glass{
+
+    display:grid;
+
+    grid-template-columns:
+
+    320px 1fr;
+
+    gap:50px;
+
+    max-width:1200px;
+
+    width:100%;
+
+}
+
+.aboutLeft{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.avatar{
+
+    width:260px;
+
+    aspect-ratio:1;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:
+
+    4px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+    0 0 30px crimson;
+
+    transition:.45s;
+
+}
+
+.avatar:hover{
+
+    transform:
+
+    scale(1.05);
+
+    box-shadow:
+
+    0 0 45px hotpink;
+
+}
+
+.aboutRight{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.aboutRight p{
+
+    line-height:2;
+
+    font-size:18px;
+
+    opacity:.9;
+
+}
+
+.aboutStats{
+
+    margin-top:35px;
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(130px,1fr));
+
+    gap:20px;
+
+}
+
+.stat{
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    text-align:center;
+
+}
+
+.stat h3{
+
+    color:#ff5d96;
+
+    margin-bottom:8px;
+
+}
+
+/* ===========================
+   SKILLS
+=========================== */
+
+.skillGrid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+}
+
+.skillCard{
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+    transition:.35s;
+
+}
+
+.skillCard:hover{
+
+    transform:
+
+    translateY(-8px);
+
+    box-shadow:
+
+    0 0 30px crimson;
+
+}
+
+.skillCard h3{
+
+    margin-bottom:18px;
+
+}
+
+.skillBar{
+
+    width:100%;
+
+    height:14px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+}
+
+.fill{
+
+    height:100%;
+
+    border-radius:30px;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    #ff3d74,
+    #ff8eb7);
+
+}
+
+.lua{
+
+    width:45%;
+
+}
+
+.csharp{
+
+    width:75%;
+
+}
+
+.python{
+
+    width:75%;
+
+}
+
+.html{
+
+    width:100%;
+
+}
+
+.blender{
+
+    width:65%;
+
+}
+
+.SQL{
+
+    width:100%;
+}
+
+.C{
+
+    width:85%;
+}
+
+.Java{
+
+    width:50%
+}
+
+.Computer{
+
+    width:100%;
+}
+
+/* ===========================
+   PROJECTS
+=========================== */
+
+.projectGrid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(330px,1fr));
+
+    gap:35px;
+
+    max-width:1300px;
+
+    margin:auto;
+
+}
+
+.project{
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+    transition:.35s;
+
+}
+
+.project:hover{
+
+    transform:
+
+    translateY(-10px);
+
+    box-shadow:
+
+    0 0 35px crimson;
+
+}
+
+.project img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.project h3{
+
+    margin:20px;
+
+}
+
+.project p{
+
+    margin:
+
+    0 20px 25px;
+
+    opacity:.8;
+
+    line-height:1.7;
+
+}
+
+/* ===========================
+   GALLERY
+=========================== */
+
+.galleryGrid{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+
+}
+
+.galleryGrid img{
+
+    width:100%;
+
+    aspect-ratio:1;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.galleryGrid img:hover{
+
+    transform:
+
+    scale(1.04);
+
+    box-shadow:
+
+    0 0 25px crimson;
+
+}
+
+/* ===========================
+   CONTACT
+=========================== */
+
+#contact{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+#contact .glass{
+
+    max-width:700px;
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+#contact p{
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    opacity:.85;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    padding:35px;
+
+    text-align:center;
+
+    opacity:.55;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:900px){
+
+#about .glass{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.avatar{
+
+    width:190px;
+
+}
+
+.aboutRight{
+
+    align-items:center;
+
+}
+
+.aboutRight p{
+
+    font-size:17px;
+
+}
+
+.skillGrid{
+
+    grid-template-columns:1fr;
+
+}
+
+.projectGrid{
+
+    grid-template-columns:1fr;
+
+}
+
+.galleryGrid{
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.galleryGrid{
+
+    grid-template-columns:1fr;
+
+}
+
+.project img{
+
+    height:190px;
+
+}
+
+section{
+
+    padding:80px 20px;
+
+}
+
+.glass{
+
+    padding:28px;
+
+}
+
+section h2{
+
+    margin-bottom:40px;
+
+}
+
+}
+
+/* ===========================
+   LIGHTBOX
+=========================== */
+
+#lightbox{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.92);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+opacity:0;
+
+pointer-events:none;
+
+transition:.35s;
+
+z-index:9999;
+
+}
+
+#lightbox.active{
+
+opacity:1;
+
+pointer-events:auto;
+
+}
+
+#lightbox img{
+
+max-width:90vw;
+
+max-height:90vh;
+
+border-radius:20px;
+
+box-shadow:
+
+0 0 40px crimson;
+
+}
+
+/* ===========================
+   CURSOR
+=========================== */
+
+#cursorGlow{
+
+position:fixed;
+
+width:22px;
+
+height:22px;
+
+border-radius:50%;
+
+background:
+
+rgba(255,50,120,.45);
+
+filter:blur(10px);
+
+pointer-events:none;
+
+transform:
+
+translate(-50%,-50%);
+
+z-index:99999;
+
+}
+
+
+/* ==========================================================
+   FINAL STYLES
+==========================================================*/
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+background:#050505;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+transition:.8s;
+
+}
+
+#loader.hide{
+
+opacity:0;
+
+pointer-events:none;
+
+}
+
+.loaderContent{
+
+text-align:center;
+
+}
+
+.loaderContent h1{
+
+font-family:"Cinzel",serif;
+
+font-size:70px;
+
+letter-spacing:8px;
+
+text-shadow:
+
+0 0 30px crimson;
+
+margin-bottom:30px;
+
+}
+
+.loaderBar{
+
+width:520px;
+
+height:8px;
+
+background:#222;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+.loaderFill{
+
+height:100%;
+
+width:0%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+crimson,
+
+hotpink
+
+);
+
+animation:
+
+loadingBar 1.2s linear;
+
+}
+
+@keyframes loadingBar{
+
+from{
+
+width:0;
+
+}
+
+to{
+
+width:100%;
+
+}
+
+}
+
+/* ===========================
+   ACTIVE NAV
+=========================== */
+
+nav a.active{
+
+color:#ff4b87;
+
+}
+
+nav a.active::after{
+
+width:100%;
+
+}
+
+/* ===========================
+   SMOOTH CARD HOVER
+=========================== */
+
+.project img{
+
+transition:.5s;
+
+}
+
+.project:hover img{
+
+transform:scale(1.06);
+
+}
+
+.galleryGrid img{
+
+transition:
+
+transform .35s,
+
+box-shadow .35s;
+
+}
+
+.galleryGrid img:hover{
+
+transform:scale(1.03);
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:900px){
+
+.loaderContent h1{
+
+font-size:45px;
+
+}
+
+.loaderBar {
+    width: 80vw;
+    max-width: 500px;
+    height: 8px;
+    background: #222;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+}
+
+#musicButton {
+    position: fixed;
+    top: 65px;
+    left: 20px;
+    z-index: 9999;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.social-buttons a {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s;
+}
+
+
+.social-buttons img {
+    width: 35px;
+    height: 35px;
+
+    filter: drop-shadow(0 0 8px white);
+
+    transition: 0.3s;
+}
+
+
+.social-buttons a:hover img {
+    transform: scale(1.2);
+
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(56%)
+        sepia(89%)
+        saturate(2500%)
+        hue-rotate(305deg)
+        brightness(103%)
+        contrast(105%)
+        drop-shadow(0 0 10px #ff4f8f)
+        drop-shadow(0 0 20px #ff4f8f);
+}
+
+.social-buttons a {
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+
+.social-buttons a:hover {
+    background: rgba(255, 79, 143, 0.15);
+
+    box-shadow:
+        0 0 10px #ff4f8f,
+        0 0 25px #ff4f8f,
+        0 0 45px #ff4f8f;
+}
+
+@media (max-width: 600px){
+
+    nav {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    nav a {
+        font-size:18px;
+    }
+
+}
+
+@media(max-width:600px){
+
+.social-buttons {
+    gap:15px;
+}
+
+.social-buttons img {
+    width:32px;
+    height:32px;
+}
+
+}
+
