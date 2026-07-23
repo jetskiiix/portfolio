@@ -502,7 +502,7 @@ document.body.style.backgroundPosition=
 
 document
 
-.querySelectorAll("nav a")
+.querySelectorAll('nav a[href^="#"]')
 
 .forEach(link=>{
 
@@ -510,19 +510,19 @@ link.onclick=(e)=>{
 
 e.preventDefault();
 
-const id=
+const id = link.getAttribute("href");
 
-link.getAttribute("href");
+const target = document.querySelector(id);
 
-document
+if(target){
 
-.querySelector(id)
-
-.scrollIntoView({
+target.scrollIntoView({
 
 behavior:"smooth"
 
 });
+
+}
 
 };
 
@@ -737,3 +737,217 @@ requestAnimationFrame(animationLoop);
 requestAnimationFrame(animationLoop);
 
 console.log("JETSKIIIX Portfolio Loaded");
+
+/* ===========================
+   TERMINAL MODE
+=========================== */
+
+
+const terminalButton =
+document.getElementById("terminalButton");
+
+
+const terminalOverlay =
+document.getElementById("terminalOverlay");
+
+
+const closeTerminal =
+document.getElementById("closeTerminal");
+
+
+const terminalOutput =
+document.getElementById("terminalOutput");
+
+
+
+const terminalLines = [
+
+"> CONNECTING TO MAJARA SYSTEM...",
+
+"> ACCESS GRANTED",
+
+"",
+
+"USER: NULL",
+
+"CLASS: UNKNOWN",
+
+"LEVEL: ???",
+
+"CURRENT OBJECTIVE: MAJARA",
+
+"",
+
+"> LOADING SKILLS...",
+
+"[████████░░] LUA",
+
+"[██████░░░░] C#",
+
+"[███████░░░] PYTHON",
+
+"[█████████░] HTML / CSS",
+
+"[█████░░░░░] BLENDER",
+
+"",
+
+"> CURRENT PLANS",
+
+"[✓] Mana System",
+
+"[✓] Lantern Physics",
+
+"[✓] Custom Sky Shader",
+
+"[ ] Weather System",
+
+"[ ] Combat System",
+
+"[ ] Enemy AI",
+
+"",
+
+"> SYSTEM STATUS: ONLINE"
+
+];
+
+
+
+let terminalRunning = false;
+
+
+
+function runTerminal(){
+
+
+if(terminalRunning)
+return;
+
+
+terminalRunning=true;
+
+
+terminalOutput.innerHTML="";
+
+
+let lineIndex=0;
+
+
+
+function typeLine(){
+
+
+if(lineIndex >= terminalLines.length){
+
+terminalRunning=false;
+
+return;
+
+}
+
+
+
+let line =
+terminalLines[lineIndex];
+
+
+let element =
+document.createElement("p");
+
+
+terminalOutput.appendChild(element);
+
+
+
+let charIndex=0;
+
+
+
+function typeCharacter(){
+
+
+if(charIndex < line.length){
+
+
+element.textContent +=
+line[charIndex];
+
+
+charIndex++;
+
+
+setTimeout(typeCharacter,35);
+
+
+}
+
+else{
+
+
+lineIndex++;
+
+
+setTimeout(typeLine,250);
+
+
+}
+
+
+}
+
+
+
+typeCharacter();
+
+
+
+}
+
+
+
+typeLine();
+
+
+}
+
+
+
+if(terminalButton){
+
+
+terminalButton.onclick=(e)=>{
+
+
+e.preventDefault();
+
+
+terminalOverlay.classList.add("active");
+
+
+runTerminal();
+
+
+};
+
+
+}
+
+
+
+if(closeTerminal){
+
+
+closeTerminal.onclick=()=>{
+
+
+terminalOverlay.classList.remove("active");
+
+
+terminalRunning=false;
+
+
+};
+
+
+}
